@@ -29,7 +29,7 @@ class OpeningHour(models.Model):
         (SUNDAY, _("Sunday")),
     ]
 
-    HOUR_CHOICES = [(x, dt.time(x).strftime('%l %p')) for x in range(24)]
+    HOUR_CHOICES = [(x, dt.time(x).strftime('%I %p')) for x in range(24)]
 
     venue = models.ForeignKey(Venue, verbose_name=getattr(labels, 'VENUE', _("Clinic")))
     customer = models.ForeignKey(Customer, verbose_name=_(
